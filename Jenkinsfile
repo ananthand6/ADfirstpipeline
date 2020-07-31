@@ -1,33 +1,10 @@
 pipeline {
-   any agent {
-         tools {
-        maven 'Maven 3.3.9'
-        jdk 'jdk8'
-    }
-    }
+    agent { docker { image 'maven:3.3.3' } }
     stages {
-        
-        stage ('Initialize') {
+        stage('build') {
             steps {
-                sh '''
-                    echo "PATH = ${PATH}"
-                    echo "M2_HOME = ${M2_HOME}"
-                '''
+                sh 'mvn --version'
             }
         }
-        
-        
-        stage('Build') {
-            steps {
-                sh 'mvn clean install'
-            }
-        }
-        
-        stage('Test') {
-            steps {
-                sh 'mvn test'
-            }
-        }
-            
     }
 }
