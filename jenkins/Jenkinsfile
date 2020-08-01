@@ -1,7 +1,7 @@
   def NEXUS_VERSION = "nexus3/3.25.1-04-SNAPSHOT"
       def  NEXUS_PROTOCOL = "http"
-       def NEXUS_URL = "52.188.135.219:8081"
-       def NEXUS_REPOSITORY = "Nexusrepo"
+       def NEXUS_URL = "20.50.212.156:8081"
+       def NEXUS_REPOSITORY = "nexrepo"
        def NEXUS_CREDENTIAL_ID = "nexusnew1"
       
 node{
@@ -19,7 +19,7 @@ node{
         stage('SonarQube Analysis'){
             def mavenHome = tool name: 'maven 3.6.3' , type: 'maven'
             withSonarQubeEnv('sonar'){
-               sh "${mavenHome}/bin/mvn sonar:sonar -Dsonar.projectKey=sonar -Dsonar.host.url=http://52.224.132.99:9000 -Dsonar.login=8e2f375d47dd243cbf5a02fa510e85c12840c432"
+               sh "${mavenHome}/bin/mvn sonar:sonar -Dsonar.projectKey=sonar -Dsonar.host.url=http://20.50.209.87:9000 -Dsonar.login=66c60c1c2424924c3b33d0846d68e0093b8fa247"
             }
          }
     
