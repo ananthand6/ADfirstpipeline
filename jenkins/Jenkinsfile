@@ -1,6 +1,6 @@
 node{
     
-    stages {
+   
         
         stage ('Initialize') {
             steps {
@@ -20,5 +20,5 @@ node{
         }
         
             
-    }
+   
 }
