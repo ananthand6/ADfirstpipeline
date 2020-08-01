@@ -4,13 +4,13 @@
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-app</artifactId>
   <packaging>jar</packaging>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0.0</version>
   <name>my-app</name>
   <url>http://maven.apache.org</url>
-   <properties>
+        <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <sonar.host.url>http://20.54.132.93:9000</sonar.host.url>
+        <sonar.host.url>http://20.50.178.13:9000</sonar.host.url>
         <java.version>1.8</java.version>
     </properties>
   <dependencies>
@@ -20,7 +20,7 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
-    <dependency>
+        <dependency>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>sonar-maven-plugin</artifactId>
             <version>2.7.1</version>
@@ -29,7 +29,7 @@
   </dependencies>
   <build>
     <plugins>
-      <plugin> 
+      <plugin>
         <!-- Build an executable JAR -->
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
@@ -45,7 +45,7 @@
         </configuration>
       </plugin>
     </plugins>
-    <pluginManagement>
+        <pluginManagement>
           <plugins>
             <plugin>
                 <groupId>org.sonarsource.scanner.maven</groupId>
