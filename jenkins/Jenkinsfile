@@ -1,9 +1,10 @@
 node{
     
    
-        
-        
-        
+    stage('checkout'){
+     git 'https://github.com/ananthand6/Testforteam'
+    } 
+          
         
         stage('Build') {
              def mavenHome = tool name: 'maven 3.6.3' , type: 'maven'
