@@ -1,13 +1,10 @@
+  def NEXUS_VERSION = "nexus3"
+      def  NEXUS_PROTOCOL = "http"
+       def NEXUS_URL = "http://52.188.135.219:8081/"
+       def NEXUS_REPOSITORY = "Nexusrepo"
+       def NEXUS_CREDENTIAL_ID = "nexus"
+      
 node{
-    
-    environment{
-        NEXUS_VERSION = "nexus3/3.25.1-04"
-        NEXUS_PROTOCOL = "http"
-        NEXUS_URL = "http://52.188.135.219:8081/"
-        NEXUS_REPOSITORY = "Nexusrepo"
-        NEXUS_CREDENTIAL_ID = "nexus"
-      }
-    
    
         stage('Checkout'){
            git 'https://github.com/ananthand6/Testforteam'
