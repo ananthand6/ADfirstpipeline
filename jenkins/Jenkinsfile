@@ -2,18 +2,11 @@ node{
     
    
         
-        stage ('Initialize') {
-            
-                def mavenHome = tool name: 'maven 3.6.3' , type: 'maven'
-                sh '''
-                    echo "PATH = "
-                    echo "M2_HOME = ${mavenHome}"
-                '''
-            
-                            }
+        
         
         
         stage('Build') {
+             def mavenHome = tool name: 'maven 3.6.3' , type: 'maven'
                             sh "${mavenHome}/bin/mvn clean package"
                        }
         
