@@ -1,7 +1,7 @@
 node{
     
     environment{
-        NEXUS_VERSION = "nexus3"
+        NEXUS_VERSION = "nexus3/3.25.1-04"
         NEXUS_PROTOCOL = "http"
         NEXUS_URL = "http://52.188.135.219:8081/"
         NEXUS_REPOSITORY = "Nexusrepo"
