@@ -10,8 +10,13 @@ node{
              def mavenHome = tool name: 'maven 3.6.3' , type: 'maven'
                             sh "${mavenHome}/bin/mvn clean package"
                        }
-        
-        
-            
+    
+        stage('SonarQube Analysis'){
+            def mavenHome = tool name: 'maven 3.6.3' , type: 'maven'
+            withSonarQubeEnv('sonar'){
+                sh "${mavenHome}/bin/mvn sonar:sonar"
+            }
+         }
+          
    
 }
