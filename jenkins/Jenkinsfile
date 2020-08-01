@@ -1,17 +1,13 @@
-pipeline {
-    agent {
-         tools {
-        maven 'Maven 3.3.9'
-        jdk 'jdk8'
-    }
-    }
+node{
+    
     stages {
         
         stage ('Initialize') {
             steps {
+                def mavenHome = tool name: 'maven 3.6.3' , type: 'maven'
                 sh '''
-                    echo "PATH = ${PATH}"
-                    echo "M2_HOME = ${M2_HOME}"
+                    echo "PATH = "
+                    echo "M2_HOME = ${mavenHome}"
                 '''
             }
         }
@@ -19,15 +15,10 @@ pipeline {
         
         stage('Build') {
             steps {
-                sh 'mvn clean package'
+                sh "${mavenHome}/bin/mvn clean package"
             }
         }
         
-        stage('Test') {
-            steps {
-                sh 'mvn test'
-            }
-        }
             
     }
 }
