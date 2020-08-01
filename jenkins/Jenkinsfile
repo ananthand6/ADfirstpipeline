@@ -55,7 +55,7 @@ node{
                                 [artifactId: pom.artifactId,
                                 classifier: '',
                                 file: "pom.xml",
-                                type: "jar"]
+                                type: "pom"]
                             ]
                         );
                     } else {
