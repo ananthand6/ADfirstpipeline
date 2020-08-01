@@ -26,7 +26,7 @@ node{
         stage("Publish to nexus") {
                 script {
                     // Read POM xml file using 'readMavenPom' step , this step 'readMavenPom' is included in: https://plugins.jenkins.io/pipeline-utility-steps
-                    pom = readMavenPom file: "pom.jar";
+                    pom = readMavenPom file: "pom.xml";
                     // Find built artifact under target folder
                     filesByGlob = findFiles(glob: "target/*.${pom.packaging}");
                     // Print some info from the artifact found
@@ -54,8 +54,8 @@ node{
                                 // Lets upload the pom.xml
                                 [artifactId: pom.artifactId,
                                 classifier: '',
-                                file: "pom.jar",
-                                type: "jar"]
+                                file: "pom.xml",
+                                type: "pom"]
                             ]
                         );
                     } else {
