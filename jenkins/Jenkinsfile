@@ -1,7 +1,7 @@
   def NEXUS_VERSION = "nexus3"
       def  NEXUS_PROTOCOL = "http"
        def NEXUS_URL = "20.50.212.156:8081"
-       def NEXUS_REPOSITORY = "nexrepo2"
+       def NEXUS_REPOSITORY = "nexusrepoAD"
        def NEXUS_CREDENTIAL_ID = "nexusnew1"
       
 node{
